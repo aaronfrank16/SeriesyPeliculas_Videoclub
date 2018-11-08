@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+    <h:head>
+        <title>Login</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <h:outputStylesheet library="css" name="materialize.min.css"/>
+        <h:outputScript library="js" name="materialize.min.js"/>
+    </h:head>
+    <ui:composition template="/Template/master.xhtml">
+
+        <ui:define name="content">
+            <h:body styleClass="cyan lighten-5">
+                <div class="valign-wrapper" id="login-page">
+                    <div class="container">
+                        <div class="center-align">
+                            <div class="row">
+                                <div class="col s6 offset-l3">
+                                    <div class="card">
+                                        <div class="card-content">
+                                            <img class="responsive-img" style="max-width:200px;" src="https://cdn6.aptoide.com/imgs/8/e/b/8ebf5f481d7817f2b957d8e578a54c89_icon.png?w=240"/>
+                                            <div class="center-align">
+                                                <h:form id="login-form">
+                                                    <p:growl autoUpdate="true"/>
+                                                    <div class="row">
+                                                        <div class="col s12 input-field">
+                                                            <p:inputText id="username" value="#{userLog.correo}" required="false" requiredMessage="Usuario es Requerido"/>
+                                                            <p:outputLabel for="username" value="Correo"/>
+                                                        </div>
+                                                        <div class="col s12 input-field">
+                                                            <p:inputText id="password" value="#{userLog.contraseña}" required="false" requiredMessage="Contraseña es requerida"/>
+                                                            <p:outputLabel for="username" value="Contraseña"/>
+                                                            
+                                                        </div>
+                                                        <div class="col s12 input-field">
+                                                            <p:captcha />
+                                                            
+                                                        </div>
+                                                                                                                <div class="col s12 input-field">
+
+                                                        <div class="col s6 input-field">
+                                                            <p:commandLink value="Ingresar" class="btn btn-large" action="#{userLog.submit()}"/>
+                                                        </div>
+                                                        <div class="col s6 input-field">
+                                                            <p:commandLink value="Registrarse" class="btn btn-large" action="Registro.xhtml" />
+                                                        </div>
+                                                    </div> 
+                                                </h:form>
+                                            </div>         
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>    
+            </h:body>
+        </ui:define>
+    </ui:composition>
+</html>

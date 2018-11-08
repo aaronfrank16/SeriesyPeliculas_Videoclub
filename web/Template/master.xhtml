@@ -1,0 +1,61 @@
+<?xml version='1.0' encoding='UTF-8' ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+
+    <h:head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <h:outputStylesheet name="/css/default.css"/>
+        <h:outputStylesheet name="/css/cssLayout.css"/>
+        <h:outputStylesheet name="/css/materialize.css"/>
+        <h:outputStylesheet name="/css/materialize.min.css"/>
+        <h:outputScript library="js" name="materialize.min.js"/>
+        <h:outputScript library="js" name="españolcalend.js"/>
+        <title>Facelets Template</title>
+    </h:head>
+
+    <h:body>
+
+        <div id="top">
+            <ui:insert name="top">
+                <ui:include src="components/header.xhtml"></ui:include>
+            </ui:insert>
+        </div>
+        <div>
+            <div id="content" class="left_content">
+                <ui:insert name="content">Content</ui:insert>
+            </div>
+        </div>
+        <div id="bottom">
+            <ui:insert name="bottom">
+                <div>
+                    <h:form>
+                        <p:graphicImage library="img" name="logo.png" style="width: 550px;"/><br/>
+                        <p:commandLink value="Contacto" onclick="PF('dlgContacto').show();" style="color: white; font: italic; font-family: cursive;font-size: 16pt;" />
+                        <p:dialog header="Contacto" widgetVar="dlgContacto"  height="100" style="font-size: 13pt;">
+                            <h:outputText value="Elaborado por:" style="font-size: 13pt;color: black"/>
+                            <br/><br/>
+                            <h:outputText style="font-size: 12pt;color: black" value="Aaron Gonzalez, Jair Alvarez, Oscar Victoria, Jesus Grimaldo" />
+                            <br/><br/>
+                            <h:outputText style="font-size: 11pt;color: black" value=" Ingenieros Asociados"/>
+                        </p:dialog>
+                        <p:commandLink value="Acerca De" onclick="PF('dlgAcerca').show();" style="color: white; font: italic; font-family: cursive;font-size: 16pt;margin-left: 20px;" />
+                        <p:dialog header="Acerca De" widgetVar="dlgAcerca"  height="300" width="300" style="font-size: 13pt;text-align: justify">
+                            <h:outputText value="Si eres fanático del cine esta web está pensada para ti, para que puedas pedir de todas las películas online que siempre quisiste, sin limitaciones, desde tu casa y lo mejor de todo, ¡Sin Gastos de Envio! Aprovecha, En SeriesPeliculas.plus podrás encontrar una gran cantidad de películas catalogadas en categorías como Drama, Terror o Comedia y cada una con una pequeña descripción de la película por si no sabes de que es." />
+                            <br></br>
+                        </p:dialog>
+                        <p:spacer width="40" />
+                    </h:form>
+                </div>
+                <p:separator style="margin-left: 30%;margin-right: 30%" />
+                <br/>
+                <div style="font-size: 14pt;">
+                    Copyright 2018, Todos los derechos reservados
+                </div>
+            </ui:insert>
+        </div>
+    </h:body>
+
+</html>

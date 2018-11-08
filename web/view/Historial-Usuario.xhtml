@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+    <h:head>
+        <title>TODO supply a title</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <h:outputStylesheet library="css" name="css1.css"/>
+        <h:outputStylesheet library="css" name="materialize.min.css"/>
+        <h:outputScript library="js" name="materialize.min.js"/>
+    </h:head>
+    <ui:composition template="/Template/master.xhtml">
+        <ui:define name="content">
+            <h:body styleClass="cyan lighten-5">
+                <h:form class="col s12">
+                    <br/>
+                    <div class="row">
+                        <p:fieldset legend="Historial de Compras">
+                            <p:panelGrid columns="4">
+                                <p:dataTable var="comp" value="">
+                                    <p:column headerText="Fecha de Compra">
+                                        <h:outputText value="5/5/2018"/>
+                                    </p:column>
+                                    <p:column headerText="Estado de la Compra">
+                                        <h:outputText value="Completado"/>
+                                    </p:column>
+                                    <p:column headerText="Nombre del Producto">
+                                        <h:outputText value=""/>
+                                    </p:column>
+                                    <p:column headerText="Total Pagado">
+                                        <h:outputText value=""/>
+                                    </p:column>
+                                </p:dataTable>
+                            </p:panelGrid>
+                        </p:fieldset>
+
+                    </div>
+                    <p:fieldset legend="Historial de rentas">
+                        <p:dataTable var="rent" value="">
+                            <p:column headerText="Fecha de Renta">               
+                                <h:outputText value="5/5/2018"/>                        
+                            </p:column>
+                            <p:column headerText="Fecha de Entrega">
+                                <h:outputText value="30/5/2018"/>
+                            </p:column>
+                            <p:column headerText="Estado de la Renta">
+                                <h:outputText value="En renta"/>
+                            </p:column>
+                            <p:column headerText="Nombre del Producto">
+                                <h:outputText value="IronMan"/>
+                            </p:column>
+                            <p:column headerText="Total Pagado">
+                                <h:outputText value="80$"/>
+                            </p:column>
+                        </p:dataTable>
+                    </p:fieldset>
+                </h:form>
+
+            </h:body>
+        </ui:define>
+    </ui:composition>
+</html>

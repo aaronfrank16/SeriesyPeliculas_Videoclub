@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+    <h:head>
+        <title>TODO supply a title</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <h:outputStylesheet library="css" name="materialize.min.css"/>
+        <h:outputStylesheet library="css" name="materialize.css"/>
+        <h:outputStylesheet library="css" name="style.css"/>
+        <h:outputScript library="js" name="materialize.min.js"/>
+        <h:outputStylesheet library="https://fonts.googleapis.com/icon?family=Material+Icons"/>
+    </h:head>
+    <ui:composition template="/Template/master.xhtml">
+        <ui:define name="content">
+            <h:body>
+                <div class="container">
+                    <h:form>
+                        <p:panel id="panel" header="Ultimas Peliculas Agregadas" style="margin-bottom:10px;">
+                            <div class="row">
+                                <div class="col s12 m3">
+                                    <div class="icon-block">                                  
+                                        <h5 class="center">Ladrona de Libros</h5>                                  
+                                        <p:graphicImage name="img/libros.jpg" style="width:200px"/>
+                                        <h5 class="center">99.99$</h5>
+                                        <p class="light">El partido de Hitler, está en auge y sus seguidores son más numerosos cada día. A lo largo de toda la historia, se muestra el interés de Liesel por la literatura, al tiempo que se narra cómo deberá tomar partido y demostrar todo su valor en tiempos convulsos.</p>
+                                        <p:commandLink value="Ver más" styleClass="btn btn-large" style="background-color: #00C853;font-size: 12pt;color: white" action="#{peliculaBean.buscar(1)}"/>
+                                    </div>
+                                </div>
+                                <div class="col s12 m3">
+                                    <div class="icon-block">
+                                        <h5 class="center">El Titanic</h5> 
+                                        <p:graphicImage name="img/titanic.jpg" style="width:200px"/>
+                                        <h5 class="center">120.99$</h5>
+                                        <p class="light">Un buscador de tesoros en barcos undidos, inicia la exploración submarina más apasionante de su vida en los restos del mítico Titanic. El hallazgo del dibujo de una joven, milagrosamente conservado, le conduce a una anciana centenaria que afirma ser la retratada.</p>
+                                        <p:commandLink value="Ver más" styleClass="btn btn-large" style="background-color: #00C853;font-size: 12pt;color: white" action="#{peliculaBean.buscar(2)}"/>
+                                    </div>
+                                </div>
+
+                                <div class="col s12 m3">
+                                    <div class="icon-block">
+                                        <h5 class="center">Piratas del Caribe</h5>
+                                        <p:graphicImage name="img/piratass.jpg" style="width:200px"/>
+                                        <h5 class="center">89.99$</h5>
+                                        <p class="light">El partido de Hitler, está en auge y sus seguidores son más numerosos cada día. A lo largo de toda la historia, se muestra el interés de Liesel por la literatura, al tiempo que se narra cómo deberá tomar partido y demostrar todo su valor en tiempos convulsos.</p>
+                                        <p:commandLink value="Ver más" styleClass="btn btn-large" style="background-color: #00C853;font-size: 12pt;color: white" action="#{peliculaBean.buscar(3)}"/>
+                                    </div>
+                                </div>
+                                <div class="col s12 m3">
+                                    <div class="icon-block">
+                                        <h5 class="center">Divergente</h5>
+                                        <p:graphicImage name="img/divergent.jpg" style="width:200px"/>
+                                        <h5 class="center">105.99$</h5>
+                                        <p class="light">El partido de Hitler, está en auge y sus seguidores son más numerosos cada día. A lo largo de toda la historia, se muestra el interés de Liesel por la literatura, al tiempo que se narra cómo deberá tomar partido y demostrar todo su valor en tiempos convulsos.</p>
+                                        <p:commandLink value="Ver más" styleClass="btn btn-large" style="background-color: #00C853;font-size: 12pt;color: white" action="#{peliculaBean.buscar(4)}"/>
+                                    </div>
+                                </div>
+                            </div>
+                        </p:panel>
+                    </h:form>
+                    <br/>
+                </div>
+                <div class="container">
+                    <h:form>
+                        <p:panel id="panel3" header="Ultimas Series Agregadas" style="margin-bottom:10px;">
+                            <div class="row">
+                                <div class="col s12 m3">
+                                    <div class="icon-block">                                  
+                                        <h5 class="center">Juego de Tronos</h5>                                  
+                                        <p:graphicImage name="img/game.jpg" style="width:210px"/>
+                                        <h5 class="center">99.99$</h5>
+                                        <p class="light">Es una serie de televisión estadounidense de fantasía medieval creada por David Benioff y D. B. Weiss para la cadena HBO. Está basada en la serie de novelas Canción de Hielo y Fuego del escritor George R. R. Martin y su trama se centra en las violentas luchas dinásticas entre varias familias nobles por el control del Trono de Hierro del continente de Poniente.</p>
+                                        <p:commandLink value="Ver más" styleClass="btn btn-large" style="background-color: #00C853;font-size: 12pt;color: white" action="#{serieBean.buscar(1)}"/>
+                                    </div>
+                                </div>
+                                <div class="col s12 m3">
+                                    <div class="icon-block">
+                                        <h5 class="center">SuperGirl</h5>                                        
+                                        <p:graphicImage name="img/super.jpg" style="width:200px"/>
+                                        <h5 class="center">120.99$</h5>
+                                        <p class="light">Es una serie de televisión estadounidense de fantasía medieval creada por David Benioff y D. B. Weiss para la cadena HBO. Está basada en la serie de novelas Canción de Hielo y Fuego del escritor George R. R. Martin y su trama se centra en las violentas luchas dinásticas entre varias familias nobles por el control del Trono de Hierro del continente de Poniente.</p>
+                                        <p:commandLink value="Ver más" styleClass="btn btn-large" style="background-color: #00C853;font-size: 12pt;color: white"/>
+                                    </div>
+                                </div>
+
+                                <div class="col s12 m3">
+                                    <div class="icon-block">
+                                        <h5 class="center">DR. House</h5>
+                                        <p:graphicImage name="img/drh.jpg" style="width:200px"/>
+                                        <h5 class="center">89.99$</h5>
+                                        <p class="light">Es una serie de televisión estadounidense de fantasía medieval creada por David Benioff y D. B. Weiss para la cadena HBO. Está basada en la serie de novelas Canción de Hielo y Fuego del escritor George R. R. Martin y su trama se centra en las violentas luchas dinásticas entre varias familias nobles por el control del Trono de Hierro del continente de Poniente.</p>
+                                        <p:commandLink value="Ver más" styleClass="btn btn-large" style="background-color: #00C853;font-size: 12pt;color: white"/>
+                                    </div>
+                                </div>
+                                <div class="col s12 m3">
+                                    <div class="icon-block">
+                                        <h5 class="center">Arrow</h5>
+                                        <p:graphicImage name="img/arrow.jpg" style="width:200px"/>
+                                        <h5 class="center">105.99$</h5>
+                                        <p class="light">Es una serie de televisión estadounidense de fantasía medieval creada por David Benioff y D. B. Weiss para la cadena HBO. Está basada en la serie de novelas Canción de Hielo y Fuego del escritor George R. R. Martin y su trama se centra en las violentas luchas dinásticas entre varias familias nobles por el control del Trono de Hierro del continente de Poniente.</p>
+                                        <p:commandLink value="Ver más" styleClass="btn btn-large" style="background-color: #00C853;font-size: 12pt;color: white"/>
+                                    </div>
+                                </div>
+                            </div>
+                        </p:panel>
+                    </h:form>
+                    <br/>
+                </div>
+            </h:body>
+        </ui:define>
+    </ui:composition>
+</html>

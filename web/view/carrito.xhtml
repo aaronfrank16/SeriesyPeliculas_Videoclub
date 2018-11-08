@@ -1,0 +1,102 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Carrito de Compras</title>
+    </h:head>
+    <h:body>
+        <ui:composition template="/Template/master.xhtml">
+
+            <ui:define name="content">
+                <h:panelGrid columns="2" cellspacing="30">
+                    <h1 style="color: black;font-size: 30pt;">Carritos</h1>
+                    <p:graphicImage library="img" name="carrito.png" style="width: 180px;"/>
+                </h:panelGrid>
+                <div>
+                    <h:panelGrid columns="2" cellspacing="30">
+                        <h:panelGrid columns="2">
+                            <p:panel id="carro_compra" header="Carrito de Compras" style="margin-bottom:20px;font-size: 15pt;">
+
+                                <p:dataTable var="comp" value="#{detalleCompraBean.valores}">
+                                    <p:column headerText="Nombre">
+                                        <h:outputText value="#{comp.idPelicula.titulo}" />
+                                    </p:column>
+                                    
+                                    <p:column headerText="Tipo">
+                                        <h:outputText value="Pelicula" />
+                                    </p:column>
+                                        
+                                    <p:column headerText="Precio">
+                                        <h:outputText value="#{comp.subtotal}" />
+                                    </p:column>
+
+                                </p:dataTable>
+                                
+                                <p:dataTable var="comp" value="#{detalleCompraSerieBean.valores}">
+                                    <p:column headerText="Nombre">
+                                        <h:outputText value="#{comp.idSerie.titulo}" />
+                                    </p:column>
+                                    
+                                    <p:column headerText="Tipo">
+                                        <h:outputText value="Serie" />
+                                    </p:column>
+                                        
+                                    <p:column headerText="Precio">
+                                        <h:outputText value="#{comp.subtotal}" />
+                                    </p:column>
+
+                                </p:dataTable>
+
+
+                            </p:panel>
+                            <p:graphicImage library="img" name="car.png" style="width: 200px;"/>
+                        </h:panelGrid>
+                        <h:panelGrid columns="2" cellpadding="10">
+                            <p:panel id="carro_renta" header="Carrito de Rentas" style="margin-bottom:20px;font-size: 15pt;">
+
+                                <p:dataTable var="car" value="">
+                                    <p:column headerText="Nombre">
+                                        <h:outputText value="Los Vengadores" />
+                                    </p:column>
+
+                                    <p:column headerText="Semanas">
+                                        <h:outputText value="3" />
+                                    </p:column>
+
+                                    <p:column headerText="Precio">
+                                        <h:outputText value="$50" />
+                                    </p:column>
+                                </p:dataTable>
+
+
+                            </p:panel>
+                            <p:graphicImage library="img" name="car2.png" style="width: 185px;"/>
+                        </h:panelGrid>
+                    </h:panelGrid>
+                    <h:panelGroup >
+                        <p:graphicImage library="img" name="pago.png" style="width: 185px;"/> 
+                        <p:panel style="width: 250px;">
+                            <h:outputText value="Total a Pagar: " style="font-size: 12pt;"/>
+                            <h:outputText value="$#{detalleCompraBean.total_pago}" style="font-size: 13pt;"/>
+                        </p:panel>
+                                               
+                    </h:panelGroup>
+                    <br/>
+                    <h:form>
+                        <p:commandLink value="Confirmar Compra" styleClass="btn btn-large" style="background-color: #00C853;font-size: 12pt;color: white" action="#{compraBean.confirmar()}" />
+                        <p:commandLink value="Vaciar Carrito" styleClass="btn btn-large" style="background-color: #FF1744;font-size: 12pt;margin-left: 10px;color: white" action="#{compraBean.vaciar(userLog.correo)}"/>
+                    </h:form>
+                    <br/>
+                    <br/>
+                    <br/>
+                </div>
+            </ui:define>
+
+        </ui:composition>
+    </h:body>
+</html>
+

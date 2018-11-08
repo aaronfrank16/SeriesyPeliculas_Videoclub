@@ -1,0 +1,50 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Catalogo Series</title>
+    </h:head>
+    <h:body>
+        <ui:composition template="/Template/master.xhtml">
+            <ui:define name="content">
+                <h:body>
+                    <div class="container">
+                        <h:form>
+                            <p:outputLabel value="" style="font-size: 28px; color: black"/>
+                            <div style="border: transparent">
+                                <p:dataTable var="comp" value="#{peliculaBean.valores}" style="border: 0px;">
+                                    <p:column style="text-align: center">
+                                        <p:panelGrid columns="1">
+                                            <h:outputText value="#{comp.titulo}" style="font-size: 14pt;" />
+                                            <h:graphicImage library="img" name="peli#{comp.idPelicula}.jpg" style="width: 120px;"/>
+                                            <h:outputText value="#{comp.sinopsis}" style="font-size: 12pt;" />
+                                            <p:commandLink value="Ver más" styleClass="btn" style="background-color: #00C853;font-size: 11pt;color: white" action="#{peliculaBean.buscar(comp.idPelicula)}"/>
+                                        </p:panelGrid>
+                                    </p:column>
+                                </p:dataTable>
+                            </div>
+                            <p:outputLabel value="Categoria 2" style="font-size: 28px; color: black"/>
+                            <div style="border: transparent">
+                                <p:dataTable var="comp" value="#{peliculaBean.valores}" style="border: 0px;">
+                                    <p:column style="text-align: center">
+                                        <p:panelGrid columns="1">
+                                            <h:outputText value="#{comp.titulo}" style="font-size: 14pt;" />
+                                            <h:graphicImage library="img" name="peli#{comp.idPelicula}.jpg" style="width: 120px;"/>
+                                            <h:outputText value="#{comp.sinopsis}" style="font-size: 12pt;" />
+                                            <p:commandLink value="Ver más" styleClass="btn" style="background-color: #00C853;font-size: 11pt;color: white" action="#{peliculaBean.buscar(comp.idPelicula)}"/>
+                                        </p:panelGrid>
+                                    </p:column>
+                                </p:dataTable>
+                            </div>
+                        </h:form>
+                    </div>
+                </h:body>
+            </ui:define>
+        </ui:composition>
+    </h:body>
+</html>
+

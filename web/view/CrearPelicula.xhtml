@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+    <h:head>
+        <title>Registro Pelicula</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <h:outputStylesheet library="css" name="materialize.min.css"/>
+        <h:outputScript library="js" name="materialize.min.js"/>
+    </h:head>
+    <ui:composition template="/Template/master.xhtml">
+        <ui:define name="content">
+            <h:body styleClass="cyan lighten-5">
+                <div class="row">
+                    <h:form class="col s12" title="Crear Pelicula">
+                        <p:fieldset legend="Registro">
+                            <p:panel id="panelPD" header="Datos Pelicula" style="margin-bottom:10px;">
+                                <div class="card">
+                                    <div class="card-content">
+                                        <div class="row">
+                                            <div class="input-field col s2">                                            
+                                                <p:outputLabel for="txtTitulo" value="Titulo"/>
+                                                <p:inputText id="txtTitulo" value="#{peliculaBean.titulo}" required="true" requiredMessage="Campo Requerido" />
+                                                <p:message for="txtTitulo"/>
+                                            </div>
+                                            <div class="input-field col s2">
+                                                <p:outputLabel for="idC" value="idCategoria"/>
+                                                <p:inputText id="idC" value="#{peliculaBean.idCategoria}" required="false" requiredMessage="Campo Requerido"/>
+                                                <p:message for="idC"/>
+                                            </div>
+                                            <div class="input-field col s8">
+                                                <p:outputLabel for="sino" value="Sinopsis"/>
+                                                <p:inputText id="sino" value="#{peliculaBean.sinopsis}" required="true" requiredMessage="Campo Requerido" />
+                                                <p:message for="sino"/>
+                                            </div>
+                                            <div class="input-field col s2">
+                                                <p:outputLabel for="año" value="Año"/>
+                                                <p:inputText id="año" value="#{peliculaBean.año}" required="true" requiredMessage="Campo Requerido" />
+                                                <p:message for="año"/>
+                                            </div>
+                                            <div class="input-field col s2">
+                                                <p:outputLabel for="dur" value="Duracion"/>
+                                                <p:inputText id="dur" value="#{peliculaBean.duracion}" required="true" requiredMessage="Campo Requerido" />
+                                                <p:message for="dur"/>
+                                            </div>
+                                            <div class="input-field col s2">
+                                                <p:outputLabel for="clas" value="Clasificacion"/>
+                                                <p:inputText id="clas" value="#{peliculaBean.clasificacion}" required="true" requiredMessage="Campo Requerido" />
+                                                <p:message for="clas"/>
+                                            </div>
+                                            <div class="input-field col s2">
+                                                <p:outputLabel for="precc" value="Precio Compra"/>
+                                                <p:inputText id="precc" value="#{peliculaBean.precio_compra}" required="true" requiredMessage="Campo Requerido" />
+                                                <p:message for="precc"/>
+                                            </div>
+                                            <div class="input-field col s2">
+                                                <p:outputLabel for="prer" value="Precio Renta"/>
+                                                <p:inputText id="prer" value="#{peliculaBean.precio_renta}" required="true" requiredMessage="Campo Requerido" />
+                                                <p:message for="prer"/>
+                                            </div>
+                                            <div class="input-field col s2">
+                                                <p:outputLabel for="canta" value="Cantidad en Almacen"/>
+                                                <p:inputText id="canta" value="#{peliculaBean.cantidad_almacen}" required="true" requiredMessage="Campo Requerido" />
+                                                <p:message for="canta"/>
+                                            </div>
+                                            <div class="input-field col s2">
+                                                <p:outputLabel for="cantr" value="Cantidad en Renta"/>
+                                                <p:inputText id="cantr" value="#{peliculaBean.cantidad_rentas}" required="true" requiredMessage="Campo Requerido" />
+                                                <p:message for="cantr"/>
+                                            </div>
+                                            <div class="input-field col s2">
+                                                <p:outputLabel for="catnn" value="Nombre de Categoria"/>
+                                                <p:inputText id="catnn" value="#{peliculaBean.categoria_nombre}" required="true" requiredMessage="Campo Requerido" />
+                                                <p:message for="catnn"/>
+                                            </div>
+                                            <div class="input-field col s2">
+                                                <p:outputLabel for="direc" value="Director"/>
+                                                <p:inputText id="direc" value="#{peliculaBean.director}" required="true" requiredMessage="Campo Requerido" />
+                                                <p:message for="direc"/>
+                                            </div>
+                                            <div class="input-field col s2">
+                                                <p:outputLabel for="rat" value="Rating"/>
+                                                <p:inputText id="rat" value="#{peliculaBean.rating}" required="true" requiredMessage="Campo Requerido" />
+                                                <p:message for="rat"/>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </p:panel>
+
+                            <p:commandLink value="Registrar Pelicula" action="#{peliculaBean.alta()}" class="btn btn-large" update="panelPD"/>
+                        </p:fieldset>
+                    </h:form>
+                </div>
+                <h:outputScript library="js" name="materialize.min.js"/>
+            </h:body>
+        </ui:define>
+    </ui:composition>
+</html>

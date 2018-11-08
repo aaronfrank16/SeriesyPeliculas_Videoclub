@@ -1,0 +1,44 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>Confirmar</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <h:outputStylesheet library="css" name="materialize.min.css"/>
+        <h:outputStylesheet library="css" name="materialize.css"/>
+        <h:outputStylesheet library="css" name="style.css"/>
+        <h:outputScript library="js" name="materialize.min.js"/>
+        <h:outputStylesheet library="https://fonts.googleapis.com/icon?family=Material+Icons"/>
+    </h:head>
+    <h:body>
+        <ui:composition template="/Template/master.xhtml">
+            <ui:define name="content">
+                <h:form>
+                    <p:fieldset legend="Datos de pago">
+                        <p:dataTable value="DatosPago">
+                            <p:column>
+                                <h:outputText value="Tarjeta"/><br/><br/><br/>
+                                <h:outputText value="Contraseña"/><br/><br/><br/>
+                                <h:outputText value="Fecha caducidad"/><br/><br/><br/>
+                                <h:outputText value="CVV"/>
+                            </p:column>
+                            <p:column>
+                                <p:inputText value="#{datosPagoPeliculaBean.tarjeta}" /><br/>
+                                <p:inputText value="#{datosPagoPeliculaBean.contraseña}" /><br/>
+                                <p:inputText value="#{datosPagoPeliculaBean.fecha_caducidad}" /><br/>
+                                <p:inputText value="#{datosPagoPeliculaBean.cvv}" /><br/>
+                            </p:column>
+                        </p:dataTable>
+                    </p:fieldset>
+                    <br/>
+                    <p:commandLink value="Confirmar" styleClass="btn btn-large" style="background-color: #00C853;font-size: 12pt;color: white" action="#{datosPagoPeliculaBean.submit(userLog.correo)}"/>
+                    <p:commandLink value="Cancelar" styleClass="btn btn-large" style="background-color: #FF1744;font-size: 12pt;margin-left: 10px;color: white" action="#{datosPagoPeliculaBean.regresar()}"/>
+                </h:form>
+            </ui:define>
+        </ui:composition>
+    </h:body>
+</html>
+

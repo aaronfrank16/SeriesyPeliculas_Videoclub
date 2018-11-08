@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+    <h:head>
+        <title>Registro</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <h:outputStylesheet library="css" name="materialize.min.css"/>
+        <h:outputScript library="js" name="materialize.min.js"/>
+    </h:head>
+    <ui:composition template="/Template/master.xhtml">
+        <ui:define name="content">
+            <h:body styleClass="cyan lighten-5">
+                <div class="row">
+                    <h:form class="col s12" title="Crear Serie">
+                        <p:fieldset legend="Registro de Series">
+                            <p:panel id="panelPD" header="Datos de la Serie" style="margin-bottom:10px;">
+                                <div class="card">
+                                    <div class="card-content">
+                                        <div class="row">
+                                            <div class="input-field col s2">                                            
+                                                <p:outputLabel for="txtTitulo" value="Titulo"/>
+                                                <p:inputText id="txtTitulo" value="#{serieBean.titulo}" required="true" requiredMessage="Campo Requerido" />
+                                                <p:message for="txtTitulo"/>
+                                            </div>
+                                            <div class="input-field col s2">
+                                                <p:outputLabel for="idC" value="idCategoria"/>
+                                                <p:inputText id="idC" value="#{serieBean.idCategoria}" required="false" requiredMessage="Campo Requerido"/>
+                                                <p:message for="idC"/>
+                                            </div>
+                                            <div class="input-field col s8">
+                                                <p:outputLabel for="sino" value="Sinopsis"/>
+                                                <p:inputText id="sino" value="#{serieBean.sinopsis}" required="true" requiredMessage="Campo Requerido" />
+                                                <p:message for="sino"/>
+                                            </div>
+                                            <div class="input-field col s2">
+                                                <p:outputLabel for="pre" value="Precio"/>
+                                                <p:inputText id="pre" value="#{serieBean.precio}" required="true" requiredMessage="Campo Requerido" />
+                                                <p:message for="pre"/>
+                                            </div>
+                                            <div class="input-field col s2">
+                                                <p:outputLabel for="rat" value="Rating"/>
+                                                <p:inputText id="rat" value="#{serieBean.rating}" required="true" requiredMessage="Campo Requerido" />
+                                                <p:message for="rat"/>
+                                            </div>
+                                            <div class="input-field col s2">
+                                                <p:outputLabel for="nt" value="Numero de Temporadas"/>
+                                                <p:inputText id="nt" value="#{serieBean.numero_temporadas}" required="true" requiredMessage="Campo Requerido" />
+                                                <p:message for="nt"/>
+                                            </div>
+                                            <div class="input-field col s2">
+                                                <p:outputLabel for="nocc" value="Nombre de Categoria"/>
+                                                <p:inputText id="nocc" value="#{serieBean.categoria_nombre}" required="true" requiredMessage="Campo Requerido" />
+                                                <p:message for="nocc"/>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </p:panel>
+
+                            <p:commandLink value="Registrar Serie" action="#{serieBean.alta()}" class="btn btn-large" update="panelPD"/>
+                        </p:fieldset>
+                    </h:form>
+                </div>
+                <h:outputScript library="js" name="materialize.min.js"/>
+ 
+            </h:body>
+        </ui:define>
+    </ui:composition>
+</html>

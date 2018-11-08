@@ -1,0 +1,65 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>Descripcion Serie</title>
+        <style>
+            #basic .ui-panel-content{
+                background-image: url(../img/desc.jpg);
+            }
+        </style>
+    </h:head>
+    <h:body>
+        <ui:composition template="/Template/master.xhtml">
+
+            <ui:define name="content">
+                <h:panelGrid columns="2" cellpadding="20">
+                    <h1 style="color: black;font-size: 30pt;">Descripción de Serie</h1>
+                    <p:graphicImage library="img" name="serie.png" style="width: 180px;"/>
+                </h:panelGrid>
+                <div>
+                    <h:form id="myForm">
+                        <h:panelGrid columns="2" cellspacing="30">
+                            <p:panel id="basic" style="margin-bottom:20px;padding-bottom: 40px;font-size: 15pt;">
+                                <h:inputHidden value="#{serieBean.idSerie}" id="movie"/>
+                                <p:fieldset legend="#{serieBean.titulo}" style="color: black">
+                                    <h:panelGrid columns="2" cellpadding="20">
+                                        <p:graphicImage library="img" name="serie#{serieBean.idSerie}.jpg" style="width: 300px;"/>
+                                        <h:panelGrid columns="2" cellpadding="10">
+                                            <h:outputLabel styleClass="caracteristica"><b>Sinopsis</b></h:outputLabel>
+                                            <h:outputText style="text-align: justify;font-size: 11pt;"
+                                                          value="#{serieBean.sinopsis}" />
+
+                                            <h:outputLabel styleClass="caracteristica"><b>Rating</b></h:outputLabel>
+                                            <h:outputText value="#{serieBean.rating}"/>
+
+                                            <h:outputLabel styleClass="caracteristica"><b>Categoria</b></h:outputLabel>
+                                            <h:outputText value="#{serieBean.categoria_nombre}"/>
+
+                                            <h:outputLabel styleClass="caracteristica"><b>Numero de Temporadas</b></h:outputLabel>
+                                            <h:outputText value="#{serieBean.numero_temporadas}"/>
+
+                                            <h:outputLabel styleClass="caracteristica"><b>Precio de Compra</b></h:outputLabel>
+                                            <h:outputText value="#{serieBean.precio}"/>
+                                        </h:panelGrid>
+                                    </h:panelGrid>
+                                </p:fieldset>
+                            </p:panel>
+
+                            <p:panel id="basic2" header="Opciones" style="margin-bottom:20px;padding-bottom: 40px;font-size: 15pt;">
+                                <h:panelGrid columns="1" cellpadding="20">
+                                    <h:commandLink value="Comprar" styleClass="btn btn-large" style="border-radius: 5px;font-size: 13pt;color: white;background-color: #0091ea;width: 200px;" action="#{compraSerieBean.crearCompra(userLog.correo)}"/>
+                                </h:panelGrid>
+                            </p:panel>
+                        </h:panelGrid>
+                    </h:form>
+                </div>
+            </ui:define>
+
+        </ui:composition>
+    </h:body>
+</html>
+

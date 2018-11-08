@@ -1,0 +1,67 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+    <h:head>
+        <title>Series</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <h:outputStylesheet library="css" name="css1.css"/>
+        <h:outputStylesheet library="css" name="materialize.min.css"/>
+        <h:outputScript library="js" name="materialize.min.js"/>
+    </h:head>
+    <h:body>
+        <ui:composition template="/Template/master.xhtml">
+            <ui:define name="content">
+                <h:body>
+                    <div class="container">
+                        <h:form>
+                            <p:outputLabel value="Categoria 1" style="font-size: 28px; color: #000"/>
+                            <!--                        <div>
+                                                        <p:graphicImage styleClass="content" url="../resources/img/serie1.jpg" height="188" width="220"/>
+                                                        <p:graphicImage styleClass="content" url="../resources/img/serie2.jpg" height="188" width="220"/>
+                                                        <p:graphicImage styleClass="content" url="../resources/img/serie3.jpg" height="188" width="220"/>
+                                                        <p:graphicImage styleClass="content" url="../resources/img/serie4.jpg" height="188" width="220"/>                        
+                                                        <p:graphicImage styleClass="content" url="../resources/img/serie5.jpg" height="188" width="220"/>                        
+                                                        <p:graphicImage styleClass="content" url="../resources/img/serie4.jpg" height="188" width="220"/>                        
+                                                        <p:graphicImage styleClass="content" url="../resources/img/serie3.jpg" height="188" width="220"/>                        
+                                                        <p:graphicImage styleClass="content" url="../resources/img/serie2.jpg" height="188" width="220"/>                        
+                                                        <p:graphicImage styleClass="content" url="../resources/img/serie1.jpg" height="188" width="220"/>                        
+                                                        <p:graphicImage styleClass="content" url="../resources/img/serie5.jpg" height="188" width="220"/>                        
+                                                        <p:graphicImage styleClass="content" url="../resources/img/serie4.jpg" height="188" width="220"/>                        
+                                                        <p:graphicImage styleClass="content" url="../resources/img/serie3.jpg" height="188" width="220"/>                        
+                                                        <p:graphicImage styleClass="content" url="../resources/img/serie2.jpg" height="188" width="220"/>                        
+                                                        
+                                                    </div>-->
+                            <div style="border: transparent">
+                                <p:contentFlow value="#{imagesView.images}" var="image" style="background-color: transparent; border: transparent">
+                                    <p:graphicImage url="../resources/img/#{image}" styleClass="content"/>
+                                    <div class="caption">#{image}</div>
+                                </p:contentFlow>
+                            </div>
+                            <p:outputLabel value="Categoria 2" style="font-size: 28px ; color: #000"/>
+                            <div>
+                                <p:graphicImage styleClass="content" url="../resources/img/serie1.jpg" height="188" width="220"/>
+                                <p:graphicImage styleClass="content" url="../resources/img/serie2.jpg" height="188" width="220"/>
+                                <p:graphicImage styleClass="content" url="../resources/img/serie3.jpg" height="188" width="220"/>
+                                <p:graphicImage styleClass="content" url="../resources/img/serie4.jpg" height="188" width="220"/>                        
+                                <p:graphicImage styleClass="content" url="../resources/img/serie5.jpg" height="188" width="220"/>                        
+                                <p:graphicImage styleClass="content" url="../resources/img/serie4.jpg" height="188" width="220"/>                        
+                                <p:graphicImage styleClass="content" url="../resources/img/serie3.jpg" height="188" width="220"/>                        
+                                <p:graphicImage styleClass="content" url="../resources/img/serie2.jpg" height="188" width="220"/>                        
+                                <p:graphicImage styleClass="content" url="../resources/img/serie1.jpg" height="188" width="220"/>                        
+                                <p:graphicImage styleClass="content" url="../resources/img/serie5.jpg" height="188" width="220"/>                        
+                                <p:graphicImage styleClass="content" url="../resources/img/serie4.jpg" height="188" width="220"/>                        
+                                <p:graphicImage styleClass="content" url="../resources/img/serie3.jpg" height="188" width="220"/>                        
+                                <p:graphicImage styleClass="content" url="../resources/img/serie2.jpg" height="188" width="220"/>
+                            </div>
+                        </h:form>
+                    </div>
+                </h:body>
+            </ui:define>
+        </ui:composition>
+    </h:body>
+</html>
+

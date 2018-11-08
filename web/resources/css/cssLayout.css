@@ -1,0 +1,58 @@
+
+#top {
+    background-color: #036fab;
+    background-image: url(../img/head2.jpg);
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    box-shadow: 0px 2px 2px rgba(0,0,0,0.7);
+    height: 260px;
+    left: 0px;
+    position: relative;    
+    top: 0px;
+    width: 100%;
+}
+
+#menuBar{    
+    margin-top: 10px;
+    top: 175px;    
+    background-color: white;
+    position: relative; 
+}
+
+#bottom {
+    /*background-color: #036fab;*/
+    background-image: url(../img/footer.jpg);
+    background-size: 100%;
+    box-shadow: 0px 0px 10px #c2dfef;
+    border-radius: 10px;
+    color: white;
+    height: 190px;
+    margin: 0px 0px 0px 0px;
+    padding: 5px;
+    position: relative;        
+    text-align: center;
+}
+
+.left_content{
+    float: none;
+    left: 10px;
+    top: 10px;
+    background-image: url(../img/fondo_web.jpg);
+    padding: 15px;   
+}
+
+#left {
+    float: left;
+    background-color: #ece3a5;
+    box-shadow: 0px 2px 2px rgba(0,0,0,0.7);
+    height: 150px;
+    padding: 5px;
+    width: 150px;
+}
+
+.center_content {    
+    position: relative;
+    background-color: white;
+    padding: 5px;    
+    margin-bottom: 0px;    
+}
